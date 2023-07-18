@@ -2,7 +2,7 @@ const initialData = [
   {
     id: 1,
     task: "Start the React Project",
-    status: true,
+    status: false,
   },
   {
     id: 2,
