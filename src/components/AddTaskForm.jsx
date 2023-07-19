@@ -1,11 +1,23 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-const AddTaskForm = () => {
+const AddTaskForm = ({ onAddTask }) => {
   const [task, setTask] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(task);
+    // random id
+    const id = crypto.randomUUID();
+
+    const newTask = {
+      id,
+      task,
+      status: false,
+    };
+
+    onAddTask(newTask);
+
     setTask("");
   }
   return (
